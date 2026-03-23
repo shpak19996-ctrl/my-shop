@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Умный термос - Сохраняет тепло 24 часа</title>
+    <style>
+        /* Базовые настройки шрифтов и отступов */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; scroll-behavior: smooth; }
+        
+        /* Шапка сайта */
+        header { background: #fff; padding: 15px 10%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 24px; font-weight: bold; color: #2c3e50; }
+        
+        /* Кнопки */
+        .btn { display: inline-block; background: #e74c3c; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; border: none; cursor: pointer; font-size: 16px; }
+        .btn:hover { background: #c0392b; }
+        
+        /* Главный экран */
+        /* Замените URL на ссылку вашей картинки товара */
+        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover; color: #fff; text-align: center; padding: 120px 20px; }
+        .hero h1 { font-size: 48px; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 20px; margin-bottom: 30px; }
+        
+        /* Блок преимуществ */
+        .features { padding: 60px 10%; display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; background: #f9f9f9; }
+        .feature-box { flex: 1; min-width: 250px; margin: 15px; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .feature-box h3 { color: #2c3e50; }
+        
+        /* Секция заказа */
+        .order-section { padding: 80px 10%; text-align: center; background: #fff; }
+        .order-section h2 { font-size: 36px; margin-bottom: 10px; }
+        .price { font-size: 28px; color: #e74c3c; font-weight: bold; margin-bottom: 30px; display: block; }
+        
+        /* Форма */
+        form { max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        input { padding: 15px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; outline: none; }
+        input:focus { border-color: #2c3e50; }
+        
+        /* Подвал */
+        footer { background: #2c3e50; color: #ecf0f1; text-align: center; padding: 20px; font-size: 14px; }
+        
+        /* Адаптивность для телефонов */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            header { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ThermoPro</div>
+        <a href="#order" class="btn">Заказать сейчас</a>
+    </header>
+
+    <section class="hero">
+        <h1>Идеальная температура вашего напитка в любой ситуации</h1>
+        <p>Умный термос с индикатором температуры. Сохраняет тепло и холод до 24 часов.</p>
+        <a href="#order" class="btn">Купить со скидкой 30%</a>
+    </section>
+
+    <section class="features">
+        <div class="feature-box">
+            <h3>🌡️ Умный дисплей</h3>
+            <p>Достаточно коснуться крышки, чтобы узнать точную температуру напитка внутри.</p>
+        </div>
+        <div class="feature-box">
+            <h3>🛡️ Надежные материалы</h3>
+            <p>Медицинская нержавеющая сталь, которая не впитывает запахи и не ржавеет.</p>
+        </div>
+        <div class="feature-box">
+            <h3>💧 100% Герметичность</h3>
+            <p>Специальный силиконовый уплотнитель гарантирует, что термос не прольется в сумке.</p>
+        </div>
+    </section>
+
+    <section id="order" class="order-section">
+        <h2>Оставьте заявку на ThermoPro</h2>
+        <p>Менеджер перезвонит вам в течение 10 минут для уточнения деталей доставки.</p>
+        <span class="price">1 990 руб. <s style="color:#999; font-size: 18px;">2 900 руб.</s></span>
+        
+        <form id="orderForm">
+            <input type="text" id="name" placeholder="Ваше имя" required>
+            <input type="tel" id="phone" placeholder="Ваш телефон" required>
+            <button type="submit" class="btn">Оформить заказ</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 ThermoPro. Все права защищены.</p>
+        <p>ИП Иванов И.И. | ИНН: 1234567890</p>
+    </footer>
+
+    <script>
+       <script>
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Предотвращаем перезагрузку страницы
+        
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        
+        // --- ВАШИ ДАННЫЕ TELEGRAM ---
+        // Вставьте сюда токен, который дал BotFather
+        const botToken = '8548221733:AAEYg2Ior5liQrnAMn10Q3x2PDhnD-GIwjk'; 
+        
+        // Вставьте сюда ваш ID, который дал getmyid_bot
+        const chatId = '615411798'; 
+        // -----------------------------
+        
+        // Формируем красивое сообщение для Telegram
+        const textMessage = `🔥 Новый заказ с сайта!\n👤 Имя: ${name}\n📞 Телефон: ${phone}`;
+        
+        // Формируем ссылку для отправки данных в Telegram
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(textMessage)}`;
+        
+        // Меняем текст кнопки на время отправки
+        const submitBtn = document.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerText;
+        submitBtn.innerText = 'Отправка...';
+        submitBtn.disabled = true;
+
+        // Отправляем запрос
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    alert('Спасибо, ' + name + '! Ваша заявка принята. Ожидайте звонка.');
+                    document.getElementById('orderForm').reset(); // Очищаем форму
+                } else {
+                    alert('Произошла ошибка на сервере Telegram. Попробуйте еще раз.');
+                }
+            })
+            .catch(error => {
+                alert('Ошибка соединения. Проверьте интернет и попробуйте снова.');
+            })
+            .finally(() => {
+                // Возвращаем кнопку в исходное состояние
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            });
+    });
+</script>
+    </script>
+
+</body>
+</html>
